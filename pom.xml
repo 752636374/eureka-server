@@ -51,7 +51,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>com.example.demo.EurekaServerApplication</start-class>
         <java.version>8</java.version>
-        <docker.image.prefix>springcloud</docker.image.prefix>
     </properties>
     <!-- 构建设置 -->
     <build>
@@ -69,6 +68,18 @@
                 </configuration>
             </plugin>
             <!-- 其他插件... -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.demo.EurekaServerApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
